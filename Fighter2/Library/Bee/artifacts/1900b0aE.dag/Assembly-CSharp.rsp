@@ -411,6 +411,8 @@
 -analyzer:"C:/Program Files/Unity/Hub/Editor/6000.2.8f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.UIToolkit.SourceGenerator.dll"
 "Assets/Scripts/Cloud.cs"
 "Assets/Scripts/Enemy.cs"
+"Assets/Scripts/Enemy_2.cs"
+"Assets/Scripts/Enemy_2_Spawner.cs"
 "Assets/Scripts/Explosion.cs"
 "Assets/Scripts/GameManager.cs"
 "Assets/Scripts/Glider.cs"

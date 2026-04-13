@@ -76,5 +76,6 @@ public class PlayerController : MonoBehaviour
         {
             transform.position = new Vector3(transform.position.x, -verticalScreenSize * .55f, 0);
         }
+
     }
 }

@@ -3,16 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\joslo\\OneDrive\\Desktop\\Fighter\\Fighter2\\Fighter\\Fighter2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\joslo\\OneDrive\\Desktop\\Fighter\\Fighter2\\Fighter\\Fighter2\\Assets\\Scripts\\PlayerController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\PlayerController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\joslo\\OneDrive\\Desktop\\Fighter\\Fighter2\\Fighter\\Fighter2\\Assets\\Scripts\\GameManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\GameManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\joslo\\OneDrive\\Desktop\\Fighter\\Fighter2\\Fighter\\Fighter2\\Assets\\Scripts\\Enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\joslo\\OneDrive\\Desktop\\Fighter\\Fighter2\\Fighter\\Fighter2\\Assets\\Scripts\\Enemy_2_Spawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Enemy_2_Spawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,45 +18,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "GameManager.cs",
-              "DocumentMoniker": "C:\\Users\\joslo\\OneDrive\\Desktop\\Fighter\\Fighter2\\Fighter\\Fighter2\\Assets\\Scripts\\GameManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\GameManager.cs",
-              "ToolTip": "C:\\Users\\joslo\\OneDrive\\Desktop\\Fighter\\Fighter2\\Fighter\\Fighter2\\Assets\\Scripts\\GameManager.cs",
-              "RelativeToolTip": "Assets\\Scripts\\GameManager.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-13T00:10:19.83Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Enemy.cs",
-              "DocumentMoniker": "C:\\Users\\joslo\\OneDrive\\Desktop\\Fighter\\Fighter2\\Fighter\\Fighter2\\Assets\\Scripts\\Enemy.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Enemy.cs",
-              "ToolTip": "C:\\Users\\joslo\\OneDrive\\Desktop\\Fighter\\Fighter2\\Fighter\\Fighter2\\Assets\\Scripts\\Enemy.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Enemy.cs",
+              "Title": "Enemy_2_Spawner.cs",
+              "DocumentMoniker": "C:\\Users\\joslo\\OneDrive\\Desktop\\Fighter\\Fighter2\\Fighter\\Fighter2\\Assets\\Scripts\\Enemy_2_Spawner.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Enemy_2_Spawner.cs",
+              "ToolTip": "C:\\Users\\joslo\\OneDrive\\Desktop\\Fighter\\Fighter2\\Fighter\\Fighter2\\Assets\\Scripts\\Enemy_2_Spawner.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Enemy_2_Spawner.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-13T00:09:16Z",
+              "WhenOpened": "2026-04-13T03:02:20.307Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "PlayerController.cs",
-              "DocumentMoniker": "C:\\Users\\joslo\\OneDrive\\Desktop\\Fighter\\Fighter2\\Fighter\\Fighter2\\Assets\\Scripts\\PlayerController.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerController.cs",
-              "ToolTip": "C:\\Users\\joslo\\OneDrive\\Desktop\\Fighter\\Fighter2\\Fighter\\Fighter2\\Assets\\Scripts\\PlayerController.cs",
-              "RelativeToolTip": "Assets\\Scripts\\PlayerController.cs",
-              "ViewState": "AgIAADAAAAAAAAAAAAAAAEwAAABcAAAAAAAAAA==",
+              "Title": "GameManager.cs",
+              "DocumentMoniker": "C:\\Users\\joslo\\OneDrive\\Desktop\\Fighter\\Fighter2\\Fighter\\Fighter2\\Assets\\Scripts\\GameManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\GameManager.cs",
+              "ToolTip": "C:\\Users\\joslo\\OneDrive\\Desktop\\Fighter\\Fighter2\\Fighter\\Fighter2\\Assets\\Scripts\\GameManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\GameManager.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-12T23:28:11.317Z",
+              "WhenOpened": "2026-04-13T02:50:45.892Z",
               "EditorCaption": ""
             }
           ]
