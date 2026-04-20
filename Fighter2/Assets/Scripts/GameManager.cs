@@ -105,37 +105,4 @@ public class GameManager : MonoBehaviour
         CreatePowerup();
         StartCoroutine(SpawnPowerup());
     }
-
-    public void PlaySound(int whichSound)
-    {
-        switch (whichSound)
-        {
-            case 1:
-                audioPlayer.GetComponent<AudioSource>().PlayOneShot(powerupSound);
-                break;
-            case 2:
-                audioPlayer.GetComponent<AudioSource>().PlayOneShot(powerdownSound);
-                break;
-        }
-    }
-
-    public void AddScore(int earnedScore)
-    {
-        score = score + earnedScore;
-        scoreText.text = "Score: " + score;
-    }
-
-    public void ChangeLivesText(int currentLives)
-    {
-        livesText.text = "Lives: " + currentLives;
-    }
-
-    public void GameOver()
-    {
-        gameOverText.SetActive(true);
-        restartText.SetActive(true);
-        gameOver = true;
-        CancelInvoke();
-        cloudMove = 0;
-    }
 }
