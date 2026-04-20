@@ -417,7 +417,6 @@
 "Assets/Scripts/GameManager.cs"
 "Assets/Scripts/Glider.cs"
 "Assets/Scripts/PlayerController.cs"
-"Assets/Scripts/SelfDestroyer.cs"
 -langversion:9.0
 /deterministic
 /optimize+
