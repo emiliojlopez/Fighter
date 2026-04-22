@@ -41,6 +41,9 @@ public class PlayerController : MonoBehaviour
         if (lives == 0)
         {
             Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+
+            Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+            gameManager.GameOver();
             Destroy(this.gameObject);
         }
     }

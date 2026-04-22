@@ -416,6 +416,7 @@
 "Assets/Scripts/Explosion.cs"
 "Assets/Scripts/GameManager.cs"
 "Assets/Scripts/Glider.cs"
+"Assets/Scripts/MainMenu.cs"
 "Assets/Scripts/PlayerController.cs"
 -langversion:9.0
 /deterministic
