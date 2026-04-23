@@ -130,7 +130,7 @@ public class PlayerController : MonoBehaviour
         }
         if (whatDidIHit.tag == "Coin")
         {
-            
+            gameManager.AddScore(1);
             gameManager.PlaySound(3);
             Destroy(whatDidIHit.gameObject);
         }

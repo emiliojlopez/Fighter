@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     public GameObject audioPlayer;
     public TextMeshProUGUI livesText;
     public TextMeshProUGUI powerupText;
+    public TextMeshProUGUI scoreText;
 
     public AudioClip powerupSound;
     public AudioClip powerdownSound;
@@ -114,6 +115,7 @@ public class GameManager : MonoBehaviour
     public void AddScore(int earnedScore)
     {
         score = score + earnedScore;
+        scoreText.text = "Score: " + score;
     }
 
     public void ChangeLivesText (int currentLives)
