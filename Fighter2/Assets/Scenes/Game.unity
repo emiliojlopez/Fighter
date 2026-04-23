@@ -152,12 +152,14 @@ MonoBehaviour:
   enemyOnePrefab: {fileID: 8729755512266785908, guid: 57d7aa5182902e24cb707961f14f52d5, type: 3}
   cloudPrefab: {fileID: 8901978872678414076, guid: 14dd4fa52784c904e83c0650f3eea560, type: 3}
   powerupPrefab: {fileID: 8901978872678414076, guid: 3ef941ee3a71d9c4cba511804f2e8e9c, type: 3}
+  coinPrefab: {fileID: 8901978872678414076, guid: 802fb65e7671a664fae228c2f1cf1214, type: 3}
   gameOverMenu: {fileID: 848177341}
   audioPlayer: {fileID: 1523907188}
   livesText: {fileID: 999943548}
   powerupText: {fileID: 314320370}
   powerupSound: {fileID: 8300000, guid: 752ca85f206f14146942c3fcafbdd492, type: 3}
   powerdownSound: {fileID: 8300000, guid: 86237706879f3c44db594d2c5cb1f7b3, type: 3}
+  coinSound: {fileID: 8300000, guid: 90b3ebbc618813a44b27143d1d188ff7, type: 3}
   horizontalScreenSize: 0
   verticalScreenSize: 0
   score: 0

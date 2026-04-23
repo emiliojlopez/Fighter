@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public GameObject enemyOnePrefab;
     public GameObject cloudPrefab;
     public GameObject powerupPrefab;
+    public GameObject coinPrefab;
     public GameObject gameOverMenu;
     public GameObject audioPlayer;
     public TextMeshProUGUI livesText;
@@ -20,6 +21,7 @@ public class GameManager : MonoBehaviour
 
     public AudioClip powerupSound;
     public AudioClip powerdownSound;
+    public AudioClip coinSound;
 
     public float horizontalScreenSize;
     public float verticalScreenSize;
@@ -39,6 +41,7 @@ public class GameManager : MonoBehaviour
         CreateSky();
         InvokeRepeating("CreateEnemy", 1, 3);
         StartCoroutine(SpawnPowerup());
+        StartCoroutine(SpawnCoin());
         powerupText.text = "No powerups yet!";
     }
 
@@ -57,7 +60,11 @@ public class GameManager : MonoBehaviour
     }
     void CreatePowerup()
     {
-        Instantiate(powerupPrefab, new Vector3(Random.Range(-horizontalScreenSize * 0.8f, horizontalScreenSize * 0.8f), Random.Range(-verticalScreenSize * 0.8f, verticalScreenSize * 0.8f), 0), Quaternion.identity);
+        Instantiate(powerupPrefab, new Vector3(Random.Range(-horizontalScreenSize * 0.8f, horizontalScreenSize * 0.8f), Random.Range(-verticalScreenSize * 1f, verticalScreenSize * 0f), 0), Quaternion.identity);
+    }
+    void CreateCoin()
+    {
+        Instantiate(coinPrefab, new Vector3(Random.Range(-horizontalScreenSize * 0.8f, horizontalScreenSize * 0.8f), Random.Range(-verticalScreenSize * 1f, verticalScreenSize * 0f), 0), Quaternion.identity);
     }
     void CreateSky()
     {
@@ -96,6 +103,14 @@ public class GameManager : MonoBehaviour
         CreatePowerup();
         StartCoroutine(SpawnPowerup());
     }
+    IEnumerator SpawnCoin()
+    {
+        float spawnTime = Random.Range(3, 5);
+        yield return new WaitForSeconds(spawnTime);
+        CreateCoin();
+        StartCoroutine(SpawnCoin());
+    }
+
     public void AddScore(int earnedScore)
     {
         score = score + earnedScore;
@@ -119,6 +134,9 @@ public class GameManager : MonoBehaviour
                 break;
             case 2:
                 audioPlayer.GetComponent<AudioSource>().PlayOneShot(powerdownSound);
+                break;
+            case 3:
+                audioPlayer.GetComponent<AudioSource>().PlayOneShot(coinSound);
                 break;
         }
     }

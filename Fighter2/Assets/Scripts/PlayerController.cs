@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour
         }
 
         if (shieldActive)
-        { 
+        {
             shieldPrefab.SetActive(false);
             shieldActive = false;
         }
@@ -63,12 +63,12 @@ public class PlayerController : MonoBehaviour
 
     void Shooting()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             Instantiate(bulletPrefab, transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
         }
     }
-    
+
     IEnumerator ShieldPowerDown()
     {
         yield return new WaitForSeconds(5);
@@ -128,31 +128,36 @@ public class PlayerController : MonoBehaviour
                     break;
             }
         }
+        if (whatDidIHit.tag == "Coin")
+        {
+            
+            gameManager.PlaySound(3);
+            Destroy(whatDidIHit.gameObject);
+        }
     }
-    
         void Movement()
-    {
-        horizontalInput = Input.GetAxis("Horizontal");
-        verticalInput = Input.GetAxis("Vertical");
-        transform.Translate(new Vector3(horizontalInput, verticalInput, 0) * Time.deltaTime * speed);
-
-        float horizontalScreenSize = gameManager.horizontalScreenSize;
-        float verticalScreenSize = gameManager.verticalScreenSize;
-
-        if (transform.position.x <= -horizontalScreenSize || transform.position.x > horizontalScreenSize)
         {
-            transform.position = new Vector3(transform.position.x * -1, transform.position.y, 0);
-        }
+            horizontalInput = Input.GetAxis("Horizontal");
+            verticalInput = Input.GetAxis("Vertical");
+            transform.Translate(new Vector3(horizontalInput, verticalInput, 0) * Time.deltaTime * speed);
 
-        if (transform.position.y > 0)
-        {
-            transform.position = new Vector3(transform.position.x, 0, 0);
-        }
+            float horizontalScreenSize = gameManager.horizontalScreenSize;
+            float verticalScreenSize = gameManager.verticalScreenSize;
 
-        if (transform.position.y <= -verticalScreenSize * .55f)
-        {
-            transform.position = new Vector3(transform.position.x, -verticalScreenSize * .55f, 0);
-        }
+            if (transform.position.x <= -horizontalScreenSize || transform.position.x > horizontalScreenSize)
+            {
+                transform.position = new Vector3(transform.position.x * -1, transform.position.y, 0);
+            }
 
+            if (transform.position.y > 0)
+            {
+                transform.position = new Vector3(transform.position.x, 0, 0);
+            }
+
+            if (transform.position.y <= -verticalScreenSize * .55f)
+            {
+                transform.position = new Vector3(transform.position.x, -verticalScreenSize * .55f, 0);
+            }
+
+        }
     }
-}
