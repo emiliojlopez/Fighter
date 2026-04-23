@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
 
     public int lives;
     private float speed;
+    public int weaponType;
+    public bool shieldActive;
 
     private GameManager gameManager;
 
@@ -15,6 +17,8 @@ public class PlayerController : MonoBehaviour
 
     public GameObject bulletPrefab;
     public GameObject explosionPrefab;
+    public GameObject thrusterPrefab;
+    public GameObject shieldPrefab;
 
     // Start is called before the first frame update
     void Start()
@@ -36,7 +40,16 @@ public class PlayerController : MonoBehaviour
     {
         //lives = lives - 1;
         //lives -= 1;
-        lives--;
+        if (!shieldActive)
+        {
+            lives--;
+        }
+
+        if (shieldActive)
+        { 
+            shieldPrefab.SetActive(false);
+            shieldActive = false;
+        }
         gameManager.ChangeLivesText(lives);
         if (lives == 0)
         {
@@ -55,8 +68,69 @@ public class PlayerController : MonoBehaviour
             Instantiate(bulletPrefab, transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
         }
     }
+    
+    IEnumerator ShieldPowerDown()
+    {
+        yield return new WaitForSeconds(5);
+        shieldPrefab.SetActive(false);
+        shieldActive = false;
+        gameManager.PlaySound(2);
+        gameManager.ManagePowerupText(5);
+    }
 
-    void Movement()
+    IEnumerator SpeedPowerDown()
+    {
+        yield return new WaitForSeconds(3f);
+        speed = 5f;
+        thrusterPrefab.SetActive(false);
+        gameManager.ManagePowerupText(0);
+        gameManager.PlaySound(2);
+    }
+
+    IEnumerator WeaponPowerDown()
+    {
+        yield return new WaitForSeconds(3f);
+        weaponType = 1;
+        gameManager.ManagePowerupText(0);
+        gameManager.PlaySound(2);
+    }
+
+    private void OnTriggerEnter2D(Collider2D whatDidIHit)
+    {
+        if (whatDidIHit.tag == "Powerup")
+        {
+            Destroy(whatDidIHit.gameObject);
+            int whichPowerup = Random.Range(1, 5);
+            gameManager.PlaySound(1);
+            switch (whichPowerup)
+            {
+                case 1:
+                    speed = 10f;
+                    thrusterPrefab.SetActive(true);
+                    gameManager.ManagePowerupText(1);
+                    StartCoroutine(SpeedPowerDown());
+                    break;
+                case 2:
+                    weaponType = 2;
+                    gameManager.ManagePowerupText(2);
+                    StartCoroutine(WeaponPowerDown());
+                    break;
+                case 3:
+                    weaponType = 3;
+                    gameManager.ManagePowerupText(3);
+                    StartCoroutine(WeaponPowerDown());
+                    break;
+                case 4:
+                    shieldPrefab.SetActive(true);
+                    shieldActive = true;
+                    gameManager.ManagePowerupText(4);
+                    StartCoroutine(ShieldPowerDown());
+                    break;
+            }
+        }
+    }
+    
+        void Movement()
     {
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");

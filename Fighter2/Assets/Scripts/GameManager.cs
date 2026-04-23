@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,9 +14,12 @@ public class GameManager : MonoBehaviour
     public GameObject cloudPrefab;
     public GameObject powerupPrefab;
     public GameObject gameOverMenu;
-
+    public GameObject audioPlayer;
     public TextMeshProUGUI livesText;
     public TextMeshProUGUI powerupText;
+
+    public AudioClip powerupSound;
+    public AudioClip powerdownSound;
 
     public float horizontalScreenSize;
     public float verticalScreenSize;
@@ -51,7 +55,10 @@ public class GameManager : MonoBehaviour
     {
         Instantiate(enemyOnePrefab, new Vector3(Random.Range(-horizontalScreenSize, horizontalScreenSize) * 0.9f, verticalScreenSize, 0), Quaternion.Euler(180, 0, 0));
     }
-
+    void CreatePowerup()
+    {
+        Instantiate(powerupPrefab, new Vector3(Random.Range(-horizontalScreenSize * 0.8f, horizontalScreenSize * 0.8f), Random.Range(-verticalScreenSize * 0.8f, verticalScreenSize * 0.8f), 0), Quaternion.identity);
+    }
     void CreateSky()
     {
         for (int i = 0; i < 30; i++)
@@ -60,6 +67,28 @@ public class GameManager : MonoBehaviour
         }
         
     }
+    public void ManagePowerupText(int powerupType)
+    {
+        switch (powerupType)
+        {
+            case 1:
+                powerupText.text = "Speed!";
+                break;
+            case 2:
+                powerupText.text = "Double Weapon!";
+                break;
+            case 3:
+                powerupText.text = "Triple Weapon!";
+                break;
+            case 4:
+                powerupText.text = "Shield!";
+                break;
+            default:
+                powerupText.text = "No powerups yet!";
+                break;
+        }
+    }
+
     IEnumerator SpawnPowerup()
     {
         float spawnTime = Random.Range(3, 5);
@@ -81,4 +110,18 @@ public class GameManager : MonoBehaviour
         gameOverMenu.SetActive(true);
         gameOver = true;
     }
+    public void PlaySound(int whichSound)
+    {
+        switch (whichSound)
+        {
+            case 1:
+                audioPlayer.GetComponent<AudioSource>().PlayOneShot(powerupSound);
+                break;
+            case 2:
+                audioPlayer.GetComponent<AudioSource>().PlayOneShot(powerdownSound);
+                break;
+        }
+    }
 }
+
+
